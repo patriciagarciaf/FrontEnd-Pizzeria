@@ -19,4 +19,14 @@ export class UserService {
   findAllUser(): Observable<User[]>{
     return this.httpClient.get<User[]>(`${this.backendURL}`)
   }
+  getUserById(id: number): Observable<User>{
+    return this.httpClient.get<User>(`${this.backendURL}/${id}`);
+  }
+
+  updateUser(id: number, user: User): Observable<Object>{
+    return this.httpClient.put(`${this.backendURL}/${id}`, user);
+  }
+  deleteUser(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.backendURL}/${id}`);
+  }
 }
