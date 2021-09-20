@@ -7,6 +7,10 @@
       "core": [
         "dist/core/core",
         "dist/core"
+      ],
+      "library-spinner": [
+        "dist/library-spinner/library-spinner",
+        "dist/library-spinner"
       ]
     },
     "outDir": "./dist/out-tsc",
