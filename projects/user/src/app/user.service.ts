@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from './user';
 import { authorize } from './authorize/authorize';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private backendURL: string = "http://localhost:9999/api/v1/users/";
+  private backendURL: string = "/users";
   constructor(private httpClient: HttpClient) { }
   
   createUser(user: User): Observable<Object>{
