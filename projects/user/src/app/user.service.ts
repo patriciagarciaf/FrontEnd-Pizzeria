@@ -9,7 +9,7 @@ import { authorize } from './authorize/authorize';
 })
 export class UserService {
 
-  private backendURL: string = "http://localhost:8080/api/v1/users";
+  private backendURL: string = "http://localhost:9999/api/v1/users/";
   constructor(private httpClient: HttpClient) { }
   
   createUser(user: User): Observable<Object>{
