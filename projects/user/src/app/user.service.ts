@@ -9,7 +9,7 @@ import { authorize } from './authorize/authorize';
 })
 export class UserService {
 
-  private backendURL: string = "http://localhost:8080/api/v1/users";
+  private backendURL: string = "http://localhost:9999/api/v1/users/";
   constructor(private httpClient: HttpClient) { }
   
   createUser(user: User): Observable<Object>{
@@ -18,5 +18,15 @@ export class UserService {
   @authorize()
   findAllUser(): Observable<User[]>{
     return this.httpClient.get<User[]>(`${this.backendURL}`)
+  }
+  getUserById(id: number): Observable<User>{
+    return this.httpClient.get<User>(`${this.backendURL}/${id}`);
+  }
+
+  updateUser(id: number, user: User): Observable<Object>{
+    return this.httpClient.put(`${this.backendURL}/${id}`, user);
+  }
+  deleteUser(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.backendURL}/${id}`);
   }
 }

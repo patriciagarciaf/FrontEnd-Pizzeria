@@ -7,7 +7,10 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { ReactiveFormsModule } from '@angular/forms';
+=======
+>>>>>>> main
 
 const providers: any[] = [];
 
@@ -21,7 +24,10 @@ const providers: any[] = [];
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+<<<<<<< HEAD
     ReactiveFormsModule
+=======
+>>>>>>> main
   ],
   providers: providers,
   bootstrap: [AppComponent]
