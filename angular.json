@@ -296,8 +296,6 @@
           }
         }
       }
-<<<<<<< HEAD
-=======
     },
     "library-spinner": {
       "projectType": "library",
@@ -458,7 +456,6 @@
           }
         }
       }
->>>>>>> 3213ac1e268f505941fb6649c8b292a56068f564
     }
   },
   "defaultProject": "FrontEnd-Pizzeria"
