@@ -8,6 +8,10 @@
         "dist/core/core",
         "dist/core"
       ],
+      "core-library": [
+        "dist/core-library/core-library",
+        "dist/core-library"
+      ],
       "library-spinner": [
         "dist/library-spinner/library-spinner",
         "dist/library-spinner"
