@@ -29,7 +29,7 @@ export class AppComponent implements OnDestroy{
   UserService: any;
 
   onSubmit(){
-    this.UserService.addUser(this.userForm.value).pipe(takeUntil(this.destroy$)).subscribe(() => {
+    this.userService.createUser(this.userForm.value).pipe(takeUntil(this.destroy$)).subscribe(() => {
       this.userForm.reset();
     })
   }
