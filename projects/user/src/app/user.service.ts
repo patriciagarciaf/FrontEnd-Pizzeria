@@ -9,8 +9,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class UserService {
-
-  private backendURL: string = "/users";
+  private API_URL = environment.server;
+  private API_Version = environment.v1;
+  private backendURL: string = String.prototype.concat(this.API_URL,this.API_Version,"/users");
   constructor(private httpClient: HttpClient) { }
   
   createUser(user: User): Observable<Object>{
