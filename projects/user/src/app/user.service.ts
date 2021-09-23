@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from './user';
 import { authorize } from './authorize/authorize';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-  private backendURL: string = "http://localhost:9999/api/v1/users/";
+  private API_URL = environment.server;
+  private API_Version = environment.v1;
+  private backendURL: string = String.prototype.concat(this.API_URL,this.API_Version,"/users");
   constructor(private httpClient: HttpClient) { }
   
   createUser(user: User): Observable<Object>{
