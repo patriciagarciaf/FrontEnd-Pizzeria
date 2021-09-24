@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from './user';
-import { authorize } from './authorize/authorize';
+
 import { environment } from 'src/environments/environment';
+import { Authorize } from 'projects/core-library/src/lib/components/autorize/authorize';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class UserService {
   createUser(user: User): Observable<Object>{
     return this.httpClient.post(`${this.backendURL}`, user);
   }
-  @authorize()
+  @Authorize()
   findAllUser(): Observable<User[]>{
     return this.httpClient.get<User[]>(`${this.backendURL}`)
   }
