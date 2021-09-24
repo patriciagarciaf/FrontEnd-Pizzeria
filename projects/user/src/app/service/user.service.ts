@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../user';
-import { authorize } from '../authorize/authorize';
 import { environment } from 'src/environments/environment';
 import { Authorize } from 'projects/core-library/src/lib/components/autorize/authorize';
 
