@@ -7,6 +7,7 @@ import { IngredientSharedModule } from 'projects/ingredient/src/app/app.module';
 import { UserSharedModule } from 'projects/user/src/app/app.module';
 import { SpinnerComponent } from 'projects/core-library/src/lib/components/spinner/spinner.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
