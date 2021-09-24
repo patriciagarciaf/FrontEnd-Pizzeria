@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
   path: 'ingredient',
+  loadChildren: () => import('./app.module')
+      .then(module => module.AppModule)
 }];
 
 @NgModule({
