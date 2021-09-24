@@ -1,6 +1,6 @@
-/*import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Ingredient } from './ingredient';
+import { Ingredient } from '../ingredient';
 import { IngredientService } from './service/ingredient.service';
 
 @Component({
@@ -15,4 +15,4 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}*/
+}

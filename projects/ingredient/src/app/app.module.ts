@@ -1,21 +1,24 @@
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { AddComponent } from './add/add.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { IngredientService } from './add/service/ingredient.service';
+import { AppComponent } from 'src/app/app.component';
 
 const providers: any[] = [];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddComponent
+    //AddComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: providers,
   bootstrap: [AppComponent]

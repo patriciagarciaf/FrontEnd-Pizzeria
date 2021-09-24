@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppModule } from 'src/app/app.module';
 
 const routes: Routes = [{
-  path: 'ingredient',
-  loadChildren: () => import('./add/add.module')
-      .then(module => module.IngredientAddModule)
+  path: 'ingredient/ingredients',
+  loadChildren: () => import('./app.module')
+      .then(module => module.AppModule)
 }];
 
 @NgModule({
