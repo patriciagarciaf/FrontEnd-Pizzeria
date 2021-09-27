@@ -5,6 +5,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { InputComponent } from './components/input/input.component';
+import { ButtonComponent } from './components/button/button.component';
 
 
 
@@ -15,7 +16,8 @@ import { InputComponent } from './components/input/input.component';
     SpinnerComponent,
     TopBarComponent,
     PageNotFoundComponent,
-    InputComponent
+    InputComponent,
+    ButtonComponent
   ],
   imports: [
   ],
