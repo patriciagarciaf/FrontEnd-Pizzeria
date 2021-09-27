@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UserService } from './user.service';
+import { UserService } from './service/user.service';
 
 const providers: any[] = [UserService];
 
