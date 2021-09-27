@@ -1,0 +1,20 @@
+.base {
+    flex-grow: 0;
+    font-family: Quicksand;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color:white ;
+    width: 147px;
+  height: 30px;
+  flex-grow: 0;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(220 38 38);
+  }
+  .base:hover{background-color: rgb(239 68 68);}
+  .base:active{background-color: rgb(220 38 38);}
