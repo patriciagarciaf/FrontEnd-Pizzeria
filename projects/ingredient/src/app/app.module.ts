@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IngredientService } from './add/service/ingredient.service';
-import { AppComponent } from 'src/app/app.component';
+import { AppComponent } from './app.component';
 import { AddComponent } from './add/add.component';
 
 const providers: any[] = [IngredientService];
