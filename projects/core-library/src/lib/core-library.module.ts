@@ -12,12 +12,15 @@ import { ButtonComponent } from './components/button/button.component';
 @NgModule({
   declarations: [
     CoreLibraryComponent,
+<<<<<<< HEAD
     MenuComponent,
     SpinnerComponent,
     TopBarComponent,
     PageNotFoundComponent,
     InputComponent,
     ButtonComponent
+=======
+>>>>>>> main
   ],
   imports: [
   ],
