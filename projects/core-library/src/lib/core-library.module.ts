@@ -12,11 +12,6 @@ import { ButtonComponent } from './components/button/button.component';
 @NgModule({
   declarations: [
     CoreLibraryComponent,
-    MenuComponent,
-    SpinnerComponent,
-    TopBarComponent,
-    PageNotFoundComponent,
-    InputComponent,
   ],
   imports: [
   ],
