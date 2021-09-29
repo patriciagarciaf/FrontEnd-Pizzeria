@@ -15,6 +15,7 @@
   border-radius: 5px;
   border: none;
   background-color: rgb(220 38 38);
+  display: block;
   }
   .base:hover{background-color: rgb(239 68 68);}
   .base:active{background-color: rgb(220 38 38);}

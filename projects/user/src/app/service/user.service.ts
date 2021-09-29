@@ -11,7 +11,7 @@ import { Authorize } from 'projects/core-library/src/lib/components/autorize/aut
 export class UserService {
   private API_URL = environment.server;
   private API_Version = environment.v1;
-  private backendURL: string = String.prototype.concat(this.API_URL,this.API_Version,"/users");
+  private backendURL: string = String.prototype.concat(this.API_URL,"/user");
   constructor(private httpClient: HttpClient) { }
   
   createUser(user: User): Observable<Object>{

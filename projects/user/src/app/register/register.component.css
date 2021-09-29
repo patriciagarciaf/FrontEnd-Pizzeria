@@ -1,0 +1,7 @@
+.contenedor{
+    display:grid;
+	gap:1.25rem;
+}
+.checkbox{
+    display:block;
+}
