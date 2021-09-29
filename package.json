@@ -35,6 +35,19 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^12.1.1",
+    "rollup-plugin-terser": "^7.0.2",
     "typescript": "~4.3.5"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patriciagarciaf/FrontEnd-Pizzeria.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patriciagarciaf/FrontEnd-Pizzeria/issues"
+  },
+  "homepage": "https://github.com/patriciagarciaf/FrontEnd-Pizzeria#readme"
 }

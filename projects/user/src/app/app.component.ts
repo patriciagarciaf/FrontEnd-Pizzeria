@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from './user.service';
+import { UserService } from './service/user.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -29,7 +29,7 @@ export class AppComponent implements OnDestroy{
   UserService: any;
 
   onSubmit(){
-    this.UserService.addUser(this.userForm.value).pipe(takeUntil(this.destroy$)).subscribe(() => {
+    this.userService.createUser(this.userForm.value).pipe(takeUntil(this.destroy$)).subscribe(() => {
       this.userForm.reset();
     })
   }

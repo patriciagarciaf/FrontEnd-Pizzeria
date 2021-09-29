@@ -1,0 +1,13 @@
+div{
+    display:grid;
+}
+.base-input{
+    width: 345px;
+    height: 46px;
+    margin: 0 0 20px;
+    padding: 12px 66.9px 11px 19.9px;
+    border-radius: 5px;
+    border: solid 1px rgb(107 114 128);
+    background-color: white;
+  }
+
