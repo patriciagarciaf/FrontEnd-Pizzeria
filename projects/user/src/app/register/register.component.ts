@@ -21,20 +21,10 @@ export class RegisterComponent{
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   });
-  
-  user: UserInterface ={
-    name: '',
-    lastName: '',
-    email: '',
-    password: ''
-  }
 
   onSubmit() {
-    this.user.name = this.userForm.get('firstName')?.value;
-    this.user.lastName = this.userForm.get('lastName')?.value;
-    this.user.email = this.userForm.get('email')?.value;
-    this.user.password = this.userForm.get('password')?.value;
-    const observer = this.userService.createUser(this.user);
+    const user = this.userForm.value;
+    const observer = this.userService.createUser(user);
     const unsuscribe = observer.subscribe((data) => {
       //TODO: IndexedDB
       this.router.navigate(["login"]);
