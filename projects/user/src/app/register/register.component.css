@@ -3,13 +3,5 @@
 	gap:1.25rem;
 }
 .checkbox{
-    margin: 0 0 0 0.3125rem;
-    font-family: Verdana, Tahoma, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
+    display:block;
 }

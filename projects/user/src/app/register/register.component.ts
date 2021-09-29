@@ -36,7 +36,7 @@ export class RegisterComponent{
     const observer = this.userService.createUser(this.user);
     const unsuscribe = observer.subscribe((data) => {
       //TODO: IndexedDB
-      //this.router.navigate(["login"]);
+      this.router.navigate(["login"]);
     });
   }
 
