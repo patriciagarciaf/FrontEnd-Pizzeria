@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
@@ -13,7 +13,13 @@ export class RegisterComponent{
 
   constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder) { }
 
-  userForm: FormGroup = new FormGroup({});
+  //TODO: comprobar email
+  userForm: FormGroup = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
+  });
   
   user: User ={
     name: '',
@@ -31,15 +37,6 @@ export class RegisterComponent{
     const unsuscribe = observer.subscribe((data) => {
       //TODO: IndexedDB
       //this.router.navigate(["login"]);
-    });
-  }
-  
-  ngOnInit(): void {
-    this.userForm = this.formBuilder.group({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', Validators.required),
     });
   }
 

@@ -9,6 +9,7 @@ import { UserService } from './service/user.service';
 import { RegisterComponent } from './register/register.component';
 import { CoreLibraryModule } from 'projects/core-library/src/lib/core-library.module';
 import { Router, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 const providers: any[] = [UserService];
 const routes: Routes =[];
@@ -16,6 +17,7 @@ const routes: Routes =[];
   declarations: [
     AppComponent,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
