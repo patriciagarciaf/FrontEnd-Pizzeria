@@ -7,6 +7,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CheckboxComponent } from './formcontrols/checkbox/checkbox.component';
+import { CapImgComponent } from './formcontrols/cap-img/cap-img.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CheckboxComponent } from './formcontrols/checkbox/checkbox.component';
     InputComponent,
     ButtonComponent,
     InputComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    CapImgComponent
   ],
   imports: [
   ],
@@ -26,7 +28,8 @@ import { CheckboxComponent } from './formcontrols/checkbox/checkbox.component';
     CoreLibraryComponent,
     ButtonComponent,
     InputComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    CapImgComponent
   ]
 })
 export class CoreLibraryModule { }
