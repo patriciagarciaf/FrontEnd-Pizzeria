@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-button',
@@ -7,5 +7,10 @@ import { Component, Input} from '@angular/core';
 })
 export class ButtonComponent{
 
-  @Input() type: String="submit"
+  @Input() type: String="submit";
+  @Output() BtnClickEmt: EventEmitter<string> = new EventEmitter<string>();
+
+  onBtnClick() {
+    this.BtnClickEmt.emit();
+  }
 }
