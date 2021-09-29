@@ -4,16 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { IngredientService } from './add/service/ingredient.service';
+import { IngredientService } from './service/ingredient.service';
 import { AppComponent } from './app.component';
-import { AddComponent } from './add/add.component';
+import { IngredientComponent } from './ingredient/ingredient.component';
 
 const providers: any[] = [IngredientService];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddComponent
+    IngredientComponent
   ],
   imports: [
     BrowserModule,
