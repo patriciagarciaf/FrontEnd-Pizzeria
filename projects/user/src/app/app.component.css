@@ -6,12 +6,12 @@ div{
     align-items: center;
 }
 .left{
-    background-image: linear-gradient(to top, red, blue);
+    background-image: linear-gradient(to top, var(--red-red-500), var(--red-red-600));
 }
 
 .right{
     
-    background-color: gray;
+    background-color: var(--gray-50);
 }
 img{
     width: 12.6875rem;

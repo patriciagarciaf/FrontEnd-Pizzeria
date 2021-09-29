@@ -7,9 +7,9 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-  @Input() type: String="text";
-  @Input() label: String="text";
-  @Input() placeholder: String="text";
+  @Input() type:String="text";
+  @Input() placeholder:String = "";
+  @Input() label:String = "";
   @Input() formGroup: FormGroup|any;
-  @Input() name: String|any;
+  @Input() name: String | any;
 }

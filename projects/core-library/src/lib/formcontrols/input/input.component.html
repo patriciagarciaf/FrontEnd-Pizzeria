@@ -1,6 +1,9 @@
-<!-- <div [formGroup]="formGroup">
-        <label for="{​​​​{​​​​name}​​​​}​​​​">{​​​​{​​​​label}​​​​}​​​​</label>
-        <div class="input-container" [formGroup]="formGroup">
-            <input id="{​​​​{​​​​name}​​​​}​​​​" [formControlName]="name" type="{​​​​{​​​​type}​​​​}​​​​" placeholder="{​​​​{​​​​placeholder}​​​​}​​​​">
-        </div>
-</div> -->
+<div [formGroup]="formGroup">
+    <label for="{{name}}">{{label}}</label>
+    <div class="input-container" [formGroup]="formGroup">
+        <input id="{{name}}" 
+        [formControlName]="name" 
+        type="{{type}}" 
+        placeholder="{{placeholder}}" class="base-input">
+    </div>
+</div>

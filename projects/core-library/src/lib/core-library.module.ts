@@ -4,6 +4,7 @@ import { InputComponent } from './formcontrols/input/input.component';
 import { CoreLibraryComponent } from './core-library.component';
 import { CheckboxComponent } from './formcontrols/checkbox/checkbox.component';
 import { CapImgComponent } from './formcontrols/cap-img/cap-img.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CapImgComponent } from './formcontrols/cap-img/cap-img.component';
     CapImgComponent
   ],
   imports: [
+    ReactiveFormsModule,
   ],
   exports: [
     CoreLibraryComponent,
