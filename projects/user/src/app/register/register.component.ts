@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
-import { User } from '../user';
+import { UserInterface } from '../user';
+import { CheckboxComponent } from 'projects/core-library/src/lib/formcontrols/checkbox/checkbox.component';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,7 @@ export class RegisterComponent{
     password: new FormControl('', Validators.required),
   });
   
-  user: User ={
+  user: UserInterface ={
     name: '',
     lastName: '',
     email: '',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { User } from '../user';
+import { UserInterface } from '../user';
 import { environment } from 'src/environments/environment';
 import { Authorize } from 'projects/core-library/src/lib/components/autorize/authorize';
 
@@ -14,18 +14,18 @@ export class UserService {
   private backendURL: string = String.prototype.concat(this.API_URL,"/user");
   constructor(private httpClient: HttpClient) { }
   
-  createUser(user: User): Observable<Object>{
+  createUser(user: UserInterface): Observable<Object>{
     return this.httpClient.post(`${this.backendURL}`, user);
   }
   @Authorize()
-  findAllUser(): Observable<User[]>{
-    return this.httpClient.get<User[]>(`${this.backendURL}`)
+  findAllUser(): Observable<UserInterface[]>{
+    return this.httpClient.get<UserInterface[]>(`${this.backendURL}`)
   }
-  getUserById(id: number): Observable<User>{
-    return this.httpClient.get<User>(`${this.backendURL}/${id}`);
+  getUserById(id: number): Observable<UserInterface>{
+    return this.httpClient.get<UserInterface>(`${this.backendURL}/${id}`);
   }
 
-  updateUser(id: number, user: User): Observable<Object>{
+  updateUser(id: number, user: UserInterface): Observable<Object>{
     return this.httpClient.put(`${this.backendURL}/${id}`, user);
   }
   deleteUser(id: number): Observable<Object>{
