@@ -12,4 +12,6 @@ div.checkbox{
     letter-spacing: normal;
     text-align: left;
     color: black;
+    display: grid;
+    display: flex;
 }

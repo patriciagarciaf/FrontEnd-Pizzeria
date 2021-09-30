@@ -1,5 +1,6 @@
 div{
-    display:grid;
+    display: grid;
+    display: flex;
 }
 .base-input{
     width: 345px;
