@@ -11,17 +11,27 @@ import { UserLoginService } from '../service/userlogin.service';
 })
 export class LoginComponent{
 
-  constructor(private userService: UserService, private router: Router) { 
-    
-  }
   userForm = new FormGroup({
-    email: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required,Validators.email]),
     password: new FormControl('', Validators.required)
   });
+
+  constructor(private userService: UserService, private router: Router) { }
+
   userLogin: UserLoginService={
     email: '',
     password: ''
   }
 
-  onSubmit(){}
+  onSubmit(){
+    const user = this.userForm.value;
+    if(this.userForm.valid){
+      const observer = this.userService.getUserById(user);
+      const unsuscribe = observer.subscribe((data) => {
+        //TODO: IndexedDB
+        this.router.navigate(["login"]);
+      })
+    }
+  }
+
 }
