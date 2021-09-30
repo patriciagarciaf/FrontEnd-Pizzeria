@@ -11,11 +11,11 @@ import { Authorize } from 'projects/core-library/src/lib/components/autorize/aut
 export class UserService {
   private API_URL = environment.server;
   private API_Version = environment.v1;
-  private backendURL: string = String.prototype.concat(this.API_URL,"/user");
+  private backendURL: string = String.prototype.concat(this.API_URL,"/users");
   constructor(private httpClient: HttpClient) { }
   
-  createUser(user: UserInterface): Observable<Object>{
-    return this.httpClient.post(`${this.backendURL}`, user);
+  createUser(user: UserInterface): Observable<UserInterface>{
+    return this.httpClient.post<UserInterface>(`${this.backendURL}`, user);
   }
   @Authorize()
   findAllUser(): Observable<UserInterface[]>{

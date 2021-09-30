@@ -10,4 +10,7 @@ div{
     border: solid 1px rgb(107 114 128);
     background-color: white;
   }
-
+  input{
+    border: none;
+    outline: none;
+}
