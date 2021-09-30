@@ -21,6 +21,7 @@ export class UserService {
   findAllUser(): Observable<UserInterface[]>{
     return this.httpClient.get<UserInterface[]>(`${this.backendURL}`)
   }
+  
   getUserById(id: number): Observable<UserInterface>{
     return this.httpClient.get<UserInterface>(`${this.backendURL}/${id}`);
   }

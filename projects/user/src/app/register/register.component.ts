@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { spinner } from 'projects/core-library/src/lib/decorators/spinner.decorator';
 import { UserService } from '../service/user.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class RegisterComponent{
 
   constructor(private userService: UserService, private router: Router) { }
 
-
+  // @spinner()
   onSubmit() {
     const user = this.userForm.value;
     if(this.userForm.valid){
