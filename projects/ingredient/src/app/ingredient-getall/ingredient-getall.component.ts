@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../ingredient/ingredient';
-import { Http2Server } from 'http2';
+import { IngredientService } from '../service/ingredient.service';
 
 @Component({
   selector: 'app-ingredient',
@@ -11,14 +11,14 @@ export class IngredientGetallComponent implements OnInit {
 
   ingredients?: Ingredient[]
 
-  constructor(private http2Server: Http2Server) { }
+  constructor(private http2Server: IngredientService) { }
 
   ngOnInit(): void {
     this.getIngredients();
   }
 
   private getIngredients() {
-    this.http2Server.findAll().subscribe(
+    this.http2Server.getAll().subscribe(
       ingredientData => { this.ingredients = ingredientData }
     )
   }
