@@ -26,7 +26,7 @@ export class IngredientCreateComponent {
   }
 
   commitIngredient() {
-    this.ingredientService?.create(this.ingredient).subscribe(
+    this.ingredientService?.createIngredient(this.ingredient).subscribe(
       ingredientData => {
         console.log(ingredientData);
         this.redirectIngredientList();

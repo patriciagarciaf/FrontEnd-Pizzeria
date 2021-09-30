@@ -1,5 +1,5 @@
-export interface Ingredient {
-    id: string;
-    name:string;
-    price:number;
+export class Ingredient {
+    id?: string;
+    name?:string;
+    price?:number;
 }
