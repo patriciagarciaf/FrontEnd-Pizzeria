@@ -4,5 +4,5 @@ const ERRORS: { [key:string]:any}={
     requiredTrue: "Debe aceptar las condiciones"
 }
 export function getError(error:string):string{
-    return ERRORS[error]
+    return ERRORS[error];
 }

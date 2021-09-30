@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component} from '@angular/core';
-import { environment } from './environment';
+//import { environment } from './environment'; 
 
 @Component({
   selector: 'lib-cap-imgupload',
@@ -31,10 +31,10 @@ export class CapImguploadComponent {
       const header = new HttpHeaders();
       header.append('Authorization', `Bearer `);
 
-      const upload$ = this.http.post(environment.url + "/api/v1/images", formData, {headers: header});
-      upload$.subscribe((data)=>{
-        //Que se hace con el uuid
-      });
+      // const upload$ = this.http.post(environment.url + "/api/v1/images", formData, {headers: header});
+      // upload$.subscribe((data)=>{
+      //   //Que se hace con el uuid
+      // });
     }
   }
 
