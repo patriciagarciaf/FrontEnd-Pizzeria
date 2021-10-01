@@ -6,20 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IngredientService } from './service/ingredient.service';
 import { AppComponent } from './app.component';
-import { IngredientComponent } from './ingredient/ingredient.component';
+import { IngredientModule } from './ingredient.module';
 
 const providers: any[] = [IngredientService];
 
 @NgModule({
   declarations: [
     AppComponent,
-    IngredientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IngredientModule,
   ],
   providers: providers,
   bootstrap: [AppComponent]

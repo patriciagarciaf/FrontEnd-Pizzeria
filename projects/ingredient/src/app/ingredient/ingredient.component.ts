@@ -1,30 +1,29 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Ingredient } from './ingredient';
-import { IngredientService } from '../service/ingredient.service';
-import { Authorize } from 'projects/core-library/src/lib/components/autorize/authorize';
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { Ingredient } from "../service/ingredient";
+import { IngredientService } from "../service/ingredient.service";
 
 @Component({
-  selector: 'app-ingredient',
-  templateUrl: './ingredient.component.html',
-  styleUrls: ['./ingredient.component.css'],
-  providers: [IngredientService]
-})
-@Authorize()
-export class IngredientComponent  {
+    selector: 'cap-ingredient',
+    templateUrl: './ingredient.component.html',
+    styleUrls: ['./ingredient.component.css']
+  })
 
-  private dispose: Subscription | null = null;
-  public ingredients = new Array<Ingredient>();
-  public selectedIngredient: Ingredient | null= null;
+export class IngredientComponent implements OnInit, OnDestroy{
+    
+    ingredients: Ingredient[] = new Array<Ingredient>()
+    private dispose: Subscription | null = null;
 
-  constructor(private ingredientService: IngredientService) { }
-  
-  ngOnInit(): void {
-    this.dispose = this.ingredientService.getAll().subscribe((data)=>this.ingredients = data);
-  }
-  
-  ngOnDestroy(): void {
-    this.dispose && this.dispose.unsubscribe();
-  }
+    constructor(private ingredientService: IngredientService){}
 
+    ngOnDestroy(): void {
+      this.dispose && this.dispose.unsubscribe();
+    }
+
+    ngOnInit(): void {
+      this.dispose = this.ingredientService.getAll().subscribe(data => this.ingredients = data);
+    }
+    handlerclick(ev:any){ 
+      //TODO: me ha dicho Pedro que aquí tengo que escribir un IF
+    }
 }
