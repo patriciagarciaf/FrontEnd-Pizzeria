@@ -4,7 +4,7 @@ import { Ingredient } from "../service/ingredient";
 import { IngredientService } from "../service/ingredient.service";
 
 @Component({
-    selector: 'cap-ingredient',
+    selector: 'cap-ingredient-item',
     templateUrl: './ingredient.component.html',
     styleUrls: ['./ingredient.component.css']
   })
