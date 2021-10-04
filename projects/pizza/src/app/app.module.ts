@@ -5,14 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { AddComponent } from './add/add.component';
+import { PizzaComponent } from './add/pizza.component';
+
 
 const providers: any[] = []
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddComponent
+    PizzaComponent
   ],
   imports: [
     BrowserModule,
