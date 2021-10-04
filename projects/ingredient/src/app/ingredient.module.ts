@@ -14,8 +14,4 @@ import { IngredientItemComponent } from './ingredientItem/ingredientitem.compone
     CommonModule,
   ]
 })
-export class IngredientModule { 
-  constructor() {
-    
-  }
-}
+export class IngredientModule {}

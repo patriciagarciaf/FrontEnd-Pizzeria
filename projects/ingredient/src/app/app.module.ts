@@ -7,12 +7,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { IngredientService } from './service/ingredient.service';
 import { AppComponent } from './app.component';
 import { IngredientModule } from './ingredient.module';
+import { IngredientComponent } from './ingredient/ingredient.component';
 
 const providers: any[] = [IngredientService];
 
 @NgModule({
   declarations: [
     AppComponent,
+    IngredientComponent,
   ],
   imports: [
     BrowserModule,
