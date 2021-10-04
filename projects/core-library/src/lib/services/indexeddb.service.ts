@@ -5,7 +5,7 @@ import { del, get, set } from 'idb-keyval';
   providedIn: 'root'
 })
 
-class IndexeddbService{
+export class IndexeddbService{
   private  key: string = 'user';
 
   async addUser( data: any) {
@@ -20,4 +20,3 @@ class IndexeddbService{
     await del(this.key);
   }
 }
-export default new IndexeddbService;

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { spinner } from 'projects/core-library/src/lib/decorators/spinner.decorator';
+import { IndexeddbService } from 'projects/core-library/src/lib/services/indexeddb.service';
 import { UserService } from '../service/user.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class RegisterComponent{
     password: new FormControl('', Validators.required),
   });
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private indexeddbService: IndexeddbService) { }
 
   // @spinner()
   onSubmit() {
@@ -26,7 +27,8 @@ export class RegisterComponent{
     if(this.userForm.valid){
       const observer = this.userService.createUser(user);
       const unsuscribe = observer.subscribe((data) => {
-        //TODO: IndexedDB
+        this.indexeddbService.removeUser();
+        this.indexeddbService.addUser(data);
         this.router.navigate(["login"]);
       })
     }
