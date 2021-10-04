@@ -23,7 +23,7 @@ export class LoginComponent{
       const observer = this.userService.login(user);
       const unsuscribe = observer.subscribe((data) => {
         //TODO: IndexedDB
-        this.router.navigate(["login"]);
+        this.router.navigate(["register"]);
       })
     }
   }
