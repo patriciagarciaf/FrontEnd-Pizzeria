@@ -13,5 +13,4 @@ export class PizzaComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   }
-
 }
