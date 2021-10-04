@@ -4,11 +4,11 @@ import { IngredientItemComponent } from './ingredientItem/ingredientitem.compone
 
 @NgModule({
   declarations: [
-    IngredientItemComponent,
+    IngredientItemComponent
     
   ],
   exports: [
-    IngredientItemComponent,
+    IngredientItemComponent
   ],
   imports: [
     CommonModule,

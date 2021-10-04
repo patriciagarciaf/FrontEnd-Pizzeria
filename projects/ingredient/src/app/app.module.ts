@@ -8,6 +8,7 @@ import { IngredientService } from './service/ingredient.service';
 import { AppComponent } from './app.component';
 import { IngredientModule } from './ingredient.module';
 import { IngredientComponent } from './ingredient/ingredient.component';
+import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
 
 const providers: any[] = [IngredientService];
 
@@ -15,6 +16,7 @@ const providers: any[] = [IngredientService];
   declarations: [
     AppComponent,
     IngredientComponent,
+    AddIngredientComponent
   ],
   imports: [
     BrowserModule,

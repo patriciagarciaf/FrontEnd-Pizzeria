@@ -1,0 +1,10 @@
+<div class="containeradd">
+    <span class="titleadd">
+        Crea un nuevo ingrediente
+    </span>
+    <form [formGroup]="addForm">
+        <cap-input [formGroup]="addForm" name="name" type="text" placeholder="Nombre * "></cap-input>
+        <cap-input [formGroup]="addForm" name="price" type="text" placeholder="000,00€*"></cap-input>
+        <button type="submit" text="Crear nuevo ingrediente" (BtnClickEmt)="onSubmit()" ></button>
+     </form>
+</div>

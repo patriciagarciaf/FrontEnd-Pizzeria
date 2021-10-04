@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../../src/environments/environment';
 import { Observable } from 'rxjs';
-import { Ingredient } from './ingredient';
+import { Ingredient, IngredientCreateDTO } from './ingredient';
 import { Authorize } from 'projects/core-library/src/lib/components/autorize/authorize';
 
 @Injectable({
@@ -21,15 +21,16 @@ export class IngredientService {
     return <Observable<Ingredient []>> this.http.get(`${this.server, this.v1}/ingredients`)
   }
 
-  createIngredient(ingredient: Ingredient): Observable<Object>{
+  createIngredient(ingredient: IngredientCreateDTO): Observable<Object>{
     return this.http.post(`${this.server, this.v1}`, ingredient);
   }
 
-  deleteIngredient(id: number): Observable<Object>{
+  deleteIngredient(id: string): Observable<Object>{
     return this.http.delete(`${this.server, this.v1}/${id}`);
   }
 
-  getIngredientById(id: number): Observable<Ingredient>{
+  getIngredientById(id: string): Observable<Ingredient>{
     return this.http.get<Ingredient>(`${this.server, this.v1}/${id}`);
   }
+   //TODO: updateIngredient ??
 }
