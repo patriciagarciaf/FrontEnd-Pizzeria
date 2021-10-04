@@ -1,19 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { CoreLibraryModule } from 'projects/core-library/src/public-api';
-
+import { CoreLibraryModule } from 'projects/core-library/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { AddComponent } from './add/add.component';
+
+const providers: any[] = []
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    CoreLibraryModule
   ],
-  providers: [],
+  providers: providers,
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+@NgModule({})
+export class PizzaSharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: AppModule,
+      providers: providers,
+    }
+  }
+}
