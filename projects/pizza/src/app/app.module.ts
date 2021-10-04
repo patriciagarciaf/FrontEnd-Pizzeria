@@ -23,7 +23,9 @@ const providers: any[] = []
   providers: providers,
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){}
+ }
 
 @NgModule({})
 export class PizzaSharedModule {
