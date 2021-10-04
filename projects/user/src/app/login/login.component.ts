@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
-import { UserLoginService } from '../service/userlogin.service';
 
 @Component({
   selector: 'app-login',
@@ -18,15 +17,10 @@ export class LoginComponent{
 
   constructor(private userService: UserService, private router: Router) { }
 
-  userLogin: UserLoginService={
-    email: '',
-    password: ''
-  }
-
   onSubmit(){
     const user = this.userForm.value;
     if(this.userForm.valid){
-      const observer = this.userService.getUserById(user);
+      const observer = this.userService.login(user);
       const unsuscribe = observer.subscribe((data) => {
         //TODO: IndexedDB
         this.router.navigate(["login"]);
