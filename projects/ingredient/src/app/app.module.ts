@@ -1,11 +1,11 @@
-import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { ModuleWithProviders } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IngredientService } from './service/ingredient.service';
-import { AppComponent } from './app.component';
+import { IngredientBaseComponent } from './app.component';
 import { IngredientModule } from './ingredient.module';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
@@ -14,7 +14,7 @@ const providers: any[] = [IngredientService];
 
 @NgModule({
   declarations: [
-    AppComponent,
+    IngredientBaseComponent,
     IngredientComponent,
     AddIngredientComponent
   ],
@@ -26,15 +26,15 @@ const providers: any[] = [IngredientService];
     IngredientModule,
   ],
   providers: providers,
-  bootstrap: [AppComponent]
+  bootstrap: [IngredientBaseComponent]
 })
 export class AppModule { }
 
 @NgModule({})
-export class IngredientSharedModule {
-  static forRoot(): ModuleWithProviders {
+export class IngredientBaseModule {
+  static forRoot(): ModuleWithProviders<IngredientBaseModule> {
     return {
-      ngModule: AppModule,
+      ngModule: IngredientBaseModule,
       providers: providers
     }
   }
