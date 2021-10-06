@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IngredientService } from '../service/ingredient.service';
+import { IngredientCreateDTO } from '../service/ingredient';
 
 @Component({
   selector: 'app-add-ingredient',
@@ -10,7 +11,7 @@ import { IngredientService } from '../service/ingredient.service';
 export class AddIngredientComponent implements OnInit {
 
   constructor(private ingredientService: IngredientService) { }
-
+  ingredientCreateDTO: IngredientCreateDTO|any;
   addForm= new FormGroup({
     name: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required)
@@ -20,10 +21,13 @@ export class AddIngredientComponent implements OnInit {
   }
 
   onSubmit(){
-    const observer= this.ingredientService.createIngredient(this.addForm.value)
-    const unsuscribe= observer.subscribe((data)=>{
-      console.log(data);
-    });
+    this.ingredientCreateDTO=this.addForm.value;
+    if(this.addForm.valid){
+      const observer= this.ingredientService.createIngredient(this.ingredientCreateDTO)
+      const unsuscribe= observer.subscribe((data)=>{
+        console.log(data);
+      });
+    }
   }
 
 }
