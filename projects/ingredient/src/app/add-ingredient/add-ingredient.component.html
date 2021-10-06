@@ -2,9 +2,9 @@
     <span class="titleadd">
         Crea un nuevo ingrediente
     </span>
-    <form [formGroup]="addForm">
-        <cap-input [formGroup]="addForm" name="name" type="text" placeholder="Nombre * "></cap-input>
-        <cap-input [formGroup]="addForm" name="price" type="text" placeholder="000,00€*"></cap-input>
-        <button type="submit" text="Crear nuevo ingrediente" (BtnClickEmt)="onSubmit()" ></button>
+    <form class="addIngredient" [formGroup]="addForm">
+        <lib-input [formGroup]="addForm" name="name" type="text" placeholder="Nombre * "></lib-input>
+        <lib-input [formGroup]="addForm" name="price" type="text" placeholder="000,00€*"></lib-input>
+        <lib-button (BtnClickEmt)="onSubmit()" type="submit">Crear nuevo ingrediente</lib-button>
      </form>
 </div>

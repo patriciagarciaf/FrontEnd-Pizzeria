@@ -1,37 +1,41 @@
 import { ModuleWithProviders } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IngredientService } from './service/ingredient.service';
 import { IngredientBaseComponent } from './app.component';
-import { IngredientModule } from './ingredient.module';
-import { IngredientComponent } from './ingredient/ingredient.component';
-import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
+import { CoreLibraryModule } from 'core-library';
+import { DecoratorService } from 'projects/core-library/src/lib/interceptor/decoratorservice';
+import { ChildRoutingModule, RootRoutingModule } from './app-routing.module';
+import { INTERCEPTORS } from 'projects/core-library/src/lib/interceptor';
 
-const providers: any[] = [IngredientService];
+const providers: any[] = [INTERCEPTORS, IngredientService];
 
 @NgModule({
   declarations: [
-    IngredientBaseComponent,
-    IngredientComponent,
-    AddIngredientComponent
+    IngredientBaseComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RootRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    IngredientModule,
+    CoreLibraryModule
   ],
   providers: providers,
   bootstrap: [IngredientBaseComponent]
 })
-export class AppModule { }
+export class IngredientBaseModule{
+  constructor(private decoratorService:DecoratorService){}
+}
 
-@NgModule({})
-export class IngredientBaseModule {
+@NgModule({
+  imports:[
+    ChildRoutingModule,
+  ]
+})
+export class IngredientSharedModule {
   static forRoot(): ModuleWithProviders<IngredientBaseModule> {
     return {
       ngModule: IngredientBaseModule,

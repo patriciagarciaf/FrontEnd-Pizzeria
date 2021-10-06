@@ -4,7 +4,7 @@ import { AddIngredientComponent } from "./add-ingredient.component";
 
 const routes: Routes=[
     {
-        path: 'add', component: AddIngredientComponent
+        path: '', component: AddIngredientComponent
     }
 ];
 
