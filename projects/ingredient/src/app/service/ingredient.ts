@@ -1,5 +1,4 @@
 export interface IngredientCreateDTO {
-    
     name:string;
     price:number;
 }

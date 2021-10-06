@@ -1,0 +1,10 @@
+<div class="containeradd">
+    <span class="titleadd">
+        Crea un nuevo ingrediente
+    </span>
+    <form class="addIngredient" [formGroup]="addForm">
+        <lib-input [formGroup]="addForm" name="name" type="text" placeholder="Nombre * "></lib-input>
+        <lib-input [formGroup]="addForm" name="price" type="numberic" placeholder="000,00€*" ></lib-input>
+        <lib-button (BtnClickEmt)="onSubmit()" type="submit">Crear nuevo ingrediente</lib-button>
+     </form>
+</div>

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../../src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { Ingredient } from './ingredient';
+import { Ingredient, IngredientCreateDTO } from './ingredient';
 import { Authorize } from 'projects/core-library/src/lib/components/autorize/authorize';
 
 @Injectable({
@@ -12,24 +12,25 @@ import { Authorize } from 'projects/core-library/src/lib/components/autorize/aut
 @Authorize()
 export class IngredientService {
 
-  private server: string = environment.server;
-  private v1: string = environment.v1;
-
-  constructor(public http: HttpClient) { }
+  private API_URL = environment.server;
+  private API_Version = environment.v1;
+  private backendURL: string = String.prototype.concat(this.API_URL,"/ingredients");
+  constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<Ingredient []>{
-    return <Observable<Ingredient []>> this.http.get(`${this.server, this.v1}/ingredients`)
+    return <Observable<Ingredient []>> this.httpClient.get(`${this.backendURL}/ingredients`)
   }
 
-  createIngredient(ingredient: Ingredient): Observable<Object>{
-    return this.http.post(`${this.server, this.v1}`, ingredient);
+  createIngredient(ingredient: IngredientCreateDTO): Observable<Object>{
+    return this.httpClient.post(`${this.backendURL}`, ingredient);
   }
 
-  deleteIngredient(id: number): Observable<Object>{
-    return this.http.delete(`${this.server, this.v1}/${id}`);
+  deleteIngredient(id: string): Observable<Object>{
+    return this.httpClient.delete(`${this.backendURL}/${id}`);
   }
 
-  getIngredientById(id: number): Observable<Ingredient>{
-    return this.http.get<Ingredient>(`${this.server, this.v1}/${id}`);
+  getIngredientById(id: string): Observable<Ingredient>{
+    return this.httpClient.get<Ingredient>(`${this.backendURL}/${id}`);
   }
+   //TODO: updateIngredient ??
 }
